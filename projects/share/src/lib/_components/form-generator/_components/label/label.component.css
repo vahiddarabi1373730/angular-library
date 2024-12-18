@@ -1,0 +1,11 @@
+:host {
+  span {
+    color: darkgray;
+    font-size: 12px;
+    font-weight: 500;
+
+    & .star {
+      color: red;
+    }
+  }
+}

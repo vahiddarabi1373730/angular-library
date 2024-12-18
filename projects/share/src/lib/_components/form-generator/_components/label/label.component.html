@@ -1,0 +1,6 @@
+<span>
+  {{ control().label }}
+  <ng-container *ngIf="formGroup().controls[control().name].hasError('required')">
+  <span class="star">*</span>
+  </ng-container>
+</span>

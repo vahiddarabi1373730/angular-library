@@ -1,0 +1,15 @@
+<ng-container [formGroup]="form">
+  <ng-container *ngFor="let control of config.controls">
+    <div class="control" [ngClass]="control.controlClass">
+      <lib-label [formGroup]="form" [control]="control"></lib-label>
+      <ng-container [ngComponentOutlet]="resolveControlComponentService.resolve(control.controlType)"
+                    [ngComponentOutletInjector]="control.name | dataInjector:control">
+
+      </ng-container>
+      <ng-container
+        *ngIf="control.validators && form.dirty && form.controls[control.name].invalid">
+        <lib-error-handler [errors]="control.validators"></lib-error-handler>
+      </ng-container>
+    </div>
+  </ng-container>
+</ng-container>

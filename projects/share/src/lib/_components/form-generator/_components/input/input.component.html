@@ -1,0 +1,4 @@
+<ng-container [formGroup]="formGroup">
+  <input *ngIf="config.config.type==='number'" type="number" pInputText [formControlName]="config.controlKey"/>
+  <input *ngIf="config.config.type==='string'" type="string" pInputText [formControlName]="config.controlKey"/>
+</ng-container>
